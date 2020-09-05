@@ -9,11 +9,13 @@ Assignment 3: Vivado Tutorial with Simulation and Synthesis
 4. The total on-chip power in the project is 0.41 W, it represents the power dissipated by the chip coming from any source.
 5. <span></span>
 	* Simulation: shows the waveform of the signals when stimulated according to the given testbench.
-	* Synthesis: Can check how the code has been mapped to circuits and what are the physical requirements of it (e.g. number of LUTs and nets).
+	* Synthesis: Can check how the Hardware description has been mapped to circuits and what are the physical requirements of it (e.g. number of LUTs and nets).
 	* Implementation: Can check how the design has been actually placed on the device and whether it violates external constraints (e.g. timing or power).
 
 ## Task 3
 
 ![wave](wave.png)
 
-The VHDL description and the testbench are attached to the task submission.
+> Note: The waveform shows that the final values for the outputs of the Latch are complaint with the Delta-cycle Analysis in the previous Assignment.
+
+The VHDL description and the testbench were taken from Assignment 2.
