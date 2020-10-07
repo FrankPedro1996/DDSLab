@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company    :  NTNU
--- Engineer   : Øystein Gjermundnes
+-- Engineer   : ï¿½ystein Gjermundnes
 -- 
 -- Create Date: 09/11/2016 04:21:16 PM
 -- Module Name: mega_adder_datapath
@@ -45,7 +45,7 @@ architecture rtl of adder_datapath is
   
   -- Signals associated with the output registers
   signal y_r, y_nxt: std_logic_vector(127 downto 0);
-    
+
 begin
 
   -- ***************************************************************************
@@ -78,7 +78,7 @@ begin
       y_r <= (others => '0');     
     elsif(clk'event and clk='1') then
       if(output_reg_en ='1') then
-        y_r <= y_nxt;       
+        y_r <= y_nxt;
       end if;
     end if;
   end process;
@@ -86,6 +86,10 @@ begin
   process (y_r, a_r, b_r, output_reg_load) begin
     if(output_reg_load = '1') then
       y_nxt <= std_logic_vector(unsigned(a_r) + unsigned(b_r));
+      --y_nxt(31 downto 0)   <= std_logic_vector(unsigned(a_r(31 downto 0)) + unsigned(b_r(31 downto 0)));
+      --y_nxt(63 downto 32)  <= std_logic_vector(unsigned(a_r(63 downto 32)) + unsigned(b_r(63 downto 32)));
+      --y_nxt(95 downto 64)  <= std_logic_vector(unsigned(a_r(95 downto 64)) + unsigned(b_r(95 downto 64)));
+      --y_nxt(127 downto 96) <= std_logic_vector(unsigned(a_r(127 downto 96)) + unsigned(b_r(127 downto 96)));
     else
       y_nxt <= x"00000000" & y_r(127 downto 32);
     end if;
