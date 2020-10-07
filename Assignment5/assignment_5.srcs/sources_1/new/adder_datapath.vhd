@@ -85,11 +85,11 @@ begin
   
   process (y_r, a_r, b_r, output_reg_load) begin
     if(output_reg_load = '1') then
-      y_nxt <= std_logic_vector(unsigned(a_r) + unsigned(b_r));
-      --y_nxt(31 downto 0)   <= std_logic_vector(unsigned(a_r(31 downto 0)) + unsigned(b_r(31 downto 0)));
-      --y_nxt(63 downto 32)  <= std_logic_vector(unsigned(a_r(63 downto 32)) + unsigned(b_r(63 downto 32)));
-      --y_nxt(95 downto 64)  <= std_logic_vector(unsigned(a_r(95 downto 64)) + unsigned(b_r(95 downto 64)));
-      --y_nxt(127 downto 96) <= std_logic_vector(unsigned(a_r(127 downto 96)) + unsigned(b_r(127 downto 96)));
+      --y_nxt <= std_logic_vector(unsigned(a_r) + unsigned(b_r));
+      y_nxt(31 downto 0)   <= std_logic_vector(unsigned(a_r(31 downto 0)) + unsigned(b_r(31 downto 0)));
+      y_nxt(63 downto 32)  <= std_logic_vector(unsigned(a_r(63 downto 32)) + unsigned(b_r(63 downto 32)));
+      y_nxt(95 downto 64)  <= std_logic_vector(unsigned(a_r(95 downto 64)) + unsigned(b_r(95 downto 64)));
+      y_nxt(127 downto 96) <= std_logic_vector(unsigned(a_r(127 downto 96)) + unsigned(b_r(127 downto 96)));
     else
       y_nxt <= x"00000000" & y_r(127 downto 32);
     end if;

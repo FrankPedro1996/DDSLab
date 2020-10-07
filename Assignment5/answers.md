@@ -77,5 +77,12 @@ According to the timing report the critical path is located on input of the regi
 ![](path_detail.png)  
 *Figure 6. Timing details of the critical path*
 
-![](path_detail.png)  
+![](datapath_new.png)  
 *Figure 7. Proposed new microarchitecture*
+
+## Task 6
+
+The testbench was run, and the testcases were successful. Besides, in Figure 8., the timing report with the new microarchitecture is presented, and it can be seen that the timing constraints are met.
+
+![](final_timing_report.png)  
+*Figure 8. Timing Report with new microarchitecture*
